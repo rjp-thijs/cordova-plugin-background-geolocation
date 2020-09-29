@@ -22,6 +22,7 @@ export interface ConfigureOptions {
    * Platform: all
    * Available providers:
    *  DISTANCE_FILTER_PROVIDER,
+   *  DISTANCE_TIMED_FILTER_PROVIDER,
    *  ACTIVITY_PROVIDER
    *  RAW_PROVIDER
    *
@@ -80,6 +81,17 @@ export interface ConfigureOptions {
    * @see {@link https://apple.co/2oHo2CV|Apple docs}
    */
   distanceFilter?: number;
+
+  /**
+   * The minimum distance (measured in meters) a device must move horizontally before an update event is generated.
+   *
+   * Platform: all
+   * Provider: DISTANCE_FILTER, RAW
+   *
+   * @default 500
+   * @see {@link https://apple.co/2oHo2CV|Apple docs}
+   */
+  distanceFilterDevide?: number;
 
   /**
    * Enable this in order to force a stop() when the application terminated.
@@ -458,6 +470,7 @@ export interface HeadlessTaskEvent {
 export interface BackgroundGeolocationPlugin {
 
   DISTANCE_FILTER_PROVIDER: LocationProvider;
+  DISTANCE_TIMED_FILTER_PROVIDER: LocationProvider;
   ACTIVITY_PROVIDER: LocationProvider;
   RAW_PROVIDER: LocationProvider;
 

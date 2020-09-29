@@ -30,6 +30,7 @@ public class ConfigMapperTest {
         JSONObject jConfig = ConfigMapper.toJSONObject(config);
         Assert.assertEquals(config.getStationaryRadius(), jConfig.getDouble("stationaryRadius"), 0f);
         Assert.assertEquals(config.getDistanceFilter().intValue(), jConfig.getInt("distanceFilter"));
+        Assert.assertEquals(config.getDistanceFilterDevide().intValue(), jConfig.getInt("distanceFilterDevide"));
         Assert.assertEquals(config.getDesiredAccuracy().intValue(), jConfig.getInt("desiredAccuracy"));
         Assert.assertEquals(config.isDebugging().booleanValue(), jConfig.getBoolean("debug"));
         Assert.assertEquals(config.getNotificationTitle(), jConfig.getString("notificationTitle"));

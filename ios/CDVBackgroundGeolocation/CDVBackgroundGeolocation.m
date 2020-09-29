@@ -41,6 +41,7 @@ static NSString * const TAG = @"CDVBackgroundGeolocation";
  * configure plugin
  * @param {Number} stationaryRadius
  * @param {Number} distanceFilter
+ * @param {Number} distanceFilterDevide
  * @param {Number} locationTimeout
  */
 - (void) configure:(CDVInvokedUrlCommand*)command

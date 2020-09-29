@@ -27,6 +27,9 @@ public class ConfigMapper {
         if (jObject.has("distanceFilter")) {
             config.setDistanceFilter(jObject.getInt("distanceFilter"));
         }
+        if (jObject.has("distanceFilterDevide")) {
+            config.setDistanceFilter(jObject.getInt("distanceFilterDevide"));
+        }
         if (jObject.has("desiredAccuracy")) {
             config.setDesiredAccuracy(jObject.getInt("desiredAccuracy"));
         }
@@ -106,6 +109,7 @@ public class ConfigMapper {
         JSONObject json = new JSONObject();
         json.put("stationaryRadius", config.getStationaryRadius());
         json.put("distanceFilter", config.getDistanceFilter());
+        json.put("distanceFilterDevide", config.getDistanceFilterDevide());
         json.put("desiredAccuracy", config.getDesiredAccuracy());
         json.put("debug", config.isDebugging());
         json.put("notificationsEnabled", config.getNotificationsEnabled());
