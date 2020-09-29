@@ -147,7 +147,7 @@ public class ConfigMapper {
         json.put("stopOnStillActivity", config.getStopOnStillActivity());
         json.put("url", config.getUrl() != Config.NullString ? config.getUrl() : JSONObject.NULL);
         json.put("syncUrl", config.getSyncUrl() != Config.NullString  ? config.getSyncUrl() : JSONObject.NULL);
-        json.put("enableSync", config.getEnableSync() != Config.NullString  ? config.getEnableSync() : JSONObject.NULL);
+        json.put("enableSync", config.getEnableSync());
         json.put("syncThreshold", config.getSyncThreshold());
         json.put("httpHeaders", new JSONObject(config.getHttpHeaders()));
         json.put("maxLocations", config.getMaxLocations());
