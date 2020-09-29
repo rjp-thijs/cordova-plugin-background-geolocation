@@ -30,6 +30,18 @@ public class ConfigMapper {
         if (jObject.has("distanceFilterDevide")) {
             config.setDistanceFilter(jObject.getInt("distanceFilterDevide"));
         }
+        if (jObject.has("distanceFilterTimeout")) {
+            config.setDistanceFilter(jObject.getBoolean("distanceFilterTimeout"));
+        }
+        if (jObject.has("distanceFilterTimeoutMin")) {
+            config.setDistanceFilter(jObject.getInt("distanceFilterTimeoutMin"));
+        }
+        if (jObject.has("distanceFilterTimeoutMinSpeed")) {
+            config.setDistanceFilter(jObject.getDouble("distanceFilterTimeoutMinSpeed"));
+        }
+        if (jObject.has("distanceFilterTimeoutMultiplier")) {
+            config.setDistanceFilter(jObject.getDouble("distanceFilterTimeoutMultiplier"));
+        }
         if (jObject.has("desiredAccuracy")) {
             config.setDesiredAccuracy(jObject.getInt("desiredAccuracy"));
         }
@@ -84,6 +96,9 @@ public class ConfigMapper {
         if (jObject.has("syncUrl")) {
             config.setSyncUrl(!jObject.isNull("syncUrl") ? jObject.getString("syncUrl") : Config.NullString);
         }
+        if (jObject.has("enableSync")) {
+            config.setSyncUrl(!jObject.isNull("enableSync") ? jObject.getBoolean("enableSync") : Config.NullString);
+        }
         if (jObject.has("syncThreshold")) {
             config.setSyncThreshold(jObject.getInt("syncThreshold"));
         }
@@ -110,6 +125,10 @@ public class ConfigMapper {
         json.put("stationaryRadius", config.getStationaryRadius());
         json.put("distanceFilter", config.getDistanceFilter());
         json.put("distanceFilterDevide", config.getDistanceFilterDevide());
+        json.put("distanceFilterTimeout", config.getDistanceFilterTimeout());
+        json.put("distanceFilterTimeoutMin", config.getDistanceFilterTimeoutMin());
+        json.put("distanceFilterTimeoutMinSpeed", config.getDistanceFilterTimeoutMinSpeed());
+        json.put("distanceFilterTimeoutMultiplier", config.getDistanceFilterTimeoutMultiplier());
         json.put("desiredAccuracy", config.getDesiredAccuracy());
         json.put("debug", config.isDebugging());
         json.put("notificationsEnabled", config.getNotificationsEnabled());
@@ -128,6 +147,7 @@ public class ConfigMapper {
         json.put("stopOnStillActivity", config.getStopOnStillActivity());
         json.put("url", config.getUrl() != Config.NullString ? config.getUrl() : JSONObject.NULL);
         json.put("syncUrl", config.getSyncUrl() != Config.NullString  ? config.getSyncUrl() : JSONObject.NULL);
+        json.put("enableSync", config.getEnableSync() != Config.NullString  ? config.getEnableSync() : JSONObject.NULL);
         json.put("syncThreshold", config.getSyncThreshold());
         json.put("httpHeaders", new JSONObject(config.getHttpHeaders()));
         json.put("maxLocations", config.getMaxLocations());
