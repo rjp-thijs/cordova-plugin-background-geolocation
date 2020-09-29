@@ -31,16 +31,16 @@ public class ConfigMapper {
             config.setDistanceFilter(jObject.getInt("distanceFilterDevide"));
         }
         if (jObject.has("distanceFilterTimeout")) {
-            config.setDistanceFilter(jObject.getBoolean("distanceFilterTimeout"));
+            config.setDistanceFilterTimeout(jObject.getBoolean("distanceFilterTimeout"));
         }
         if (jObject.has("distanceFilterTimeoutMin")) {
-            config.setDistanceFilter(jObject.getInt("distanceFilterTimeoutMin"));
+            config.setDistanceFilterTimeoutMin(jObject.getInt("distanceFilterTimeoutMin"));
         }
         if (jObject.has("distanceFilterTimeoutMinSpeed")) {
-            config.setDistanceFilter(jObject.getDouble("distanceFilterTimeoutMinSpeed"));
+            config.setDistanceFilterTimeoutMinSpeed(jObject.getDouble("distanceFilterTimeoutMinSpeed"));
         }
         if (jObject.has("distanceFilterTimeoutMultiplier")) {
-            config.setDistanceFilter(jObject.getDouble("distanceFilterTimeoutMultiplier"));
+            config.setDistanceFilterTimeoutMultiplier(jObject.getDouble("distanceFilterTimeoutMultiplier"));
         }
         if (jObject.has("desiredAccuracy")) {
             config.setDesiredAccuracy(jObject.getInt("desiredAccuracy"));
@@ -97,7 +97,7 @@ public class ConfigMapper {
             config.setSyncUrl(!jObject.isNull("syncUrl") ? jObject.getString("syncUrl") : Config.NullString);
         }
         if (jObject.has("enableSync")) {
-            config.setSyncUrl(!jObject.isNull("enableSync") ? jObject.getBoolean("enableSync") : Config.NullString);
+            config.setEnableSync(!jObject.isNull("enableSync") ? jObject.getBoolean("enableSync") : Config.NullString);
         }
         if (jObject.has("syncThreshold")) {
             config.setSyncThreshold(jObject.getInt("syncThreshold"));
