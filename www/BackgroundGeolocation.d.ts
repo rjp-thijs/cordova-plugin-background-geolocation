@@ -94,6 +94,30 @@ export interface ConfigureOptions {
   distanceFilterDevide?: number;
 
   /**
+   * @default true
+   * @see {@link https://apple.co/2oHo2CV|Apple docs}
+   */
+  distanceFilterTimeout?: boolean;
+
+  /**
+   * @default 5000
+   * @see {@link https://apple.co/2oHo2CV|Apple docs}
+   */
+  distanceFilterTimeoutMin?: number;
+
+  /**
+   * @default 1.5
+   * @see {@link https://apple.co/2oHo2CV|Apple docs}
+   */
+  distanceFilterTimeoutMinSpeed?: number;
+
+  /**
+   * @default 12
+   * @see {@link https://apple.co/2oHo2CV|Apple docs}
+   */
+  distanceFilterTimeoutMultiplier?: number;
+
+  /**
    * Enable this in order to force a stop() when the application terminated.
    * E.g. on iOS, double-tap home button, swipe away the app.
    *
@@ -269,6 +293,12 @@ export interface ConfigureOptions {
    * Provider: all
    */
   syncUrl?: string;
+
+  /**
+   * Platform: all
+   * Provider: all
+   */
+  enableSync?: boolean;
 
   /**
    * Specifies how many previously failed locations will be sent to server at once.
